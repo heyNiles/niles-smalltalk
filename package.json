@@ -1,0 +1,17 @@
+{
+  "name": "niles-smalltalk",
+  "version": "0.1.0",
+  "description": "Niles small talk skill",
+  "main": "index.js",
+  "scripts": {},
+  "keywords": [
+    "niles",
+    "skill",
+    "small",
+    "talk",
+    "rating"
+  ],
+  "author": "Telepat <gabi@telepat.io> (http://telepat.io)",
+  "license": "GPL-3.0-or-later",
+  "dependencies": {}
+}
