@@ -1,12 +1,16 @@
 module.exports = (params, ctx) => {
   const skills = ctx.skills.installed;
+  const { logger } = ctx;
+  const { chalk } = logger;
 
-  ctx.logger.log('I can...\n');
+  logger.log('I can...\n');
   skills.forEach((skill) => {
-    ctx.logger.log(`  ✔  ${skill.description[0]}`);
-    skill.intents.forEach((intent) => {
-      ctx.logger.log(`    • ${intent.description[0]} ("${intent.examples[0]}")`);
-    });
+    logger.log(`  ${chalk.blue('✔')}  ${skill.description[0]}`);
+    skill.intents
+      .filter(intent => !intent.skipHelp)
+      .forEach((intent) => {
+        ctx.logger.log(`    • ${intent.description[0]} ${chalk.dim(`"${intent.cmdExamples[0]}"`)}`);
+      });
     ctx.logger.log();
   });
 };
