@@ -1,5 +1,6 @@
 module.exports = intent => intent.ns('yes')
   .can('understand affirmation')
+  .skipHelpListing()
   .examples([
     'yes',
     'ok',

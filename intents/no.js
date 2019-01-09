@@ -1,5 +1,6 @@
 module.exports = intent => intent.ns('no')
   .can('understand negation')
+  .skipHelpListing()
   .examples([
     'no',
     'cancel',
