@@ -1,3 +1,3 @@
 module.exports = (params, ctx) => {
-  ctx.logger.log('Hello, sir.');
+  ctx.logger.log('Hello.');
 };
