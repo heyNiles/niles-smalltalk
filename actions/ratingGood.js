@@ -12,7 +12,7 @@ module.exports = async (params, ctx) => {
     .filter(session => session.queryResult && session.queryResult.intent.name === 'smalltalk.rating_good')
     .value();
 
-  logger.log('Glad to be of service, sir.');
+  logger.log('Glad to be of service.');
   analytics.track('ratingGood', {
     reportedSession,
     seriousness: recentGoodRatings.length,
