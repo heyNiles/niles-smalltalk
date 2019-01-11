@@ -11,6 +11,6 @@ module.exports = async (params, ctx) => {
 
   imgData.slice(2).forEach(line => logger.log(chalk.hex('#2AFD9A')(line.slice(5).join(''))));
 
-  ctx.logger.log(`     ${chalk.green('Hello. I\'m Niles.')}`);
+  ctx.logger.log(`       ${chalk.green('Hello. I\'m Niles.')}`);
   ctx.logger.log();
 };
