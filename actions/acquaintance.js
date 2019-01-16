@@ -9,14 +9,15 @@ module.exports = async (params, ctx) => {
     },
   );
 
-  imgData.slice(2).forEach(line => logger.log(chalk.hex('#2AFD9A')(line.slice(5).join(''))));
+  imgData.slice(2).forEach(line => logger.log(chalk.nilesGreen(line.slice(5).join(''))));
 
-  logger.log(`       ${chalk.green('Hello. I\'m Niles.')}`);
+  logger.log(`       ${chalk.nilesGreen('Hello. I\'m Niles.')}`);
   logger.log();
 
   try {
     const name = await git.readConfig('user.name');
 
+    // TODO: Handle name not set
     logger.log(`\nNice to meet you, ${name}\n`);
   } catch (error) {
     logger.log('\nNice to meet you.\n');

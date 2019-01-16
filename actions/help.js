@@ -5,7 +5,7 @@ module.exports = (params, ctx) => {
 
   logger.log('I can...\n');
   skills.forEach((skill) => {
-    logger.log(`  ${chalk.blue('✔')}  ${skill.description[0]}`);
+    logger.log(`  ${chalk.nilesGreen('✔')}  ${skill.description[0]}`);
     skill.intents
       .filter(intent => !intent.skipHelp)
       .forEach((intent) => {
