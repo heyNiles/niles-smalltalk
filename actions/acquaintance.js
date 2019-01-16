@@ -15,7 +15,7 @@ module.exports = async (params, ctx) => {
   logger.log();
 
   try {
-    const name = await git.userName();
+    const name = await git.readConfig('user.name');
 
     logger.log(`\nNice to meet you, ${name}\n`);
   } catch (error) {

@@ -19,4 +19,4 @@ module.exports = intent => intent.ns('acquaintance')
   .alias('nice', ['nice', 'pleased', 'glad', 'happy'])
   .alias('things', ['things', 'stuff'])
   .alias('what', ['what', 'who', 'wtf'])
-  .readsGitSettingsTo('greet you by name');
+  .readsGitConfigsTo('greet you by name');
