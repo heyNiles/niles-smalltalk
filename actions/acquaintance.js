@@ -1,5 +1,5 @@
 module.exports = async (params, ctx) => {
-  const { logger, modulePath } = ctx;
+  const { logger, modulePath, handlers: { git } } = ctx;
   const { image2braille, chalk } = logger;
   const imgData = await image2braille(
     `${modulePath}/assets/niles_dither.png`,
@@ -11,6 +11,14 @@ module.exports = async (params, ctx) => {
 
   imgData.slice(2).forEach(line => logger.log(chalk.hex('#2AFD9A')(line.slice(5).join(''))));
 
-  ctx.logger.log(`       ${chalk.green('Hello. I\'m Niles.')}`);
-  ctx.logger.log();
+  logger.log(`       ${chalk.green('Hello. I\'m Niles.')}`);
+  logger.log();
+
+  try {
+    const name = await git.userName();
+
+    logger.log(`\nNice to meet you, ${name}\n`);
+  } catch (error) {
+    logger.log('\nNice to meet you.\n');
+  }
 };
